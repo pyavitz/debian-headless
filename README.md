@@ -1,4 +1,4 @@
-## Build on aarch64
+## Make on aarch64
 
 ```
 sudo mv isohybrid.pl /usr/local/bin/
@@ -51,7 +51,7 @@ system will use legacy boot, by default.
 
 Make sure all necessary tools are installed:
 
-    sudo apt-get install bsdtar cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
+    sudo apt install -y bsdtar cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
 
 Or 
 
