@@ -1,3 +1,11 @@
+## Build on aarch64
+
+```
+sudo mv isohybrid.pl /usr/local/bin/
+sudo chmod +x /usr/local/bin/isohybrid.pl
+sudo ln -sn /usr/local/bin/isohybrid.pl /usr/local/bin/isohybrid
+```
+
 # Debian headless/remote installation
 
 I wanted to do a headless installation for a server – i.e. without any keyboard
@@ -43,7 +51,7 @@ system will use legacy boot, by default.
 
 Make sure all necessary tools are installed:
 
-    sudo apt-get install bsdtar syslinux syslinux-utils cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
+    sudo apt-get install bsdtar cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
 
 Or 
 
