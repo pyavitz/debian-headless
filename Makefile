@@ -25,7 +25,7 @@ help:
 
 install-depends:
 	# install all dependencies
-	sudo apt-get install bsdtar cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
+	sudo apt install -y bsdtar cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
 
 image: clean unpack isolinux preseed md5 iso
 
