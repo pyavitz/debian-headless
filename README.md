@@ -1,11 +1,3 @@
-## Make on aarch64
-
-```
-sudo mv isohybrid.pl /usr/local/bin/
-sudo chmod +x /usr/local/bin/isohybrid.pl
-sudo ln -sn /usr/local/bin/isohybrid.pl /usr/local/bin/isohybrid
-```
-
 # Debian headless/remote installation
 
 I wanted to do a headless installation for a server – i.e. without any keyboard
@@ -32,7 +24,7 @@ system will use legacy boot, by default.
 ## In a nutshell
 
     # Get a netinst image 
-    wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.5.0-amd64-netinst.iso
+    wget https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.3.0+nonfree/amd64/iso-cd/firmware-10.3.0-amd64-netinst.iso
     # Edit config.txt
     vim config.txt
     # Edit.create preseed-XXX.cfg 
@@ -51,11 +43,13 @@ system will use legacy boot, by default.
 
 Make sure all necessary tools are installed:
 
-    sudo apt install -y bsdtar cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
+    sudo apt install -y bsdtar syslinux syslinux-utils cpio genisoimage \
+	coreutils qemu-system qemu-system-x86 util-linux
 
 Or 
 
     make install-depends
+    make install-arm-depends
 
 
 ## Download the debian installation image
@@ -69,8 +63,8 @@ https://www.debian.org/distrib/netinst
 
 Edit the makefile and set some variables to match your situation. e.g.
 
-    SOURCE = debian-9.5.0-amd64-netinst.iso
-    TARGET = debian-9.5.0-amd64-netinst-preseed.iso
+    SOURCE = firmware-10.3.0-amd64-netinst.iso
+    TARGET = firmware-10.3.0-amd64-netinst.iso
     ARCH = amd
     QEMU = qemu-system-x86_64 
     LABEL = debian-9.5.0-amd64-headless
