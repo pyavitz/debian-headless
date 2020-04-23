@@ -43,8 +43,7 @@ system will use legacy boot, by default.
 
 Make sure all necessary tools are installed:
 
-    sudo apt install -y bsdtar syslinux syslinux-utils cpio genisoimage \
-	coreutils qemu-system qemu-system-x86 util-linux
+    sudo apt install -y bsdtar syslinux syslinux-utils cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
 
 Or 
 
