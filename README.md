@@ -66,7 +66,7 @@ Edit the makefile and set some variables to match your situation. e.g.
     TARGET = firmware-10.3.0-amd64-netinst.iso
     ARCH = amd
     QEMU = qemu-system-x86_64 
-    LABEL = debian-9.5.0-amd64-headless
+    LABEL = debian-10.3.0-amd64-headless
     USBDEV = /dev/sdc
 
 `ARCH` indicates the target processor architecture – `amd` or `386`
