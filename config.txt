@@ -13,8 +13,8 @@ QEMU = qemu-system-x86_64
 #QEMU = qemu-system-i386
 
 # Preseeding file to use
-#PRESEED = preseed-en_US.cfg	# US locale and keyboard
-PRESEED =  preseed-en_DE.cfg	# US locale and keyboard, except country=DE
+PRESEED = preseed-en_US.cfg	# US locale and keyboard
+#PRESEED =  preseed-en_DE.cfg	# US locale and keyboard, except country=DE
 #PRESEED = preseed-de_DE.cfg	# german locale and keyboard
 
 # Volume label for the target ISO image
