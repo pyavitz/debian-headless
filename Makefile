@@ -11,21 +11,31 @@ help:
 	@echo
 	@echo "Usage:"
 	@echo
-	@echo "  make install-depends	install all dependencies"
-	@echo "  make image             Build the ISO image"
-	@echo "  make qemu              Boot ISO image in qemu for testing (optional)"
-	@echo "  make usb               Write ISO to USB device"
-	@echo "  make FAT               Add a FAT partition ot the USB stick (optiona)"
-	@echo "  make clean             Clean up temp files and folders"
-	@echo "  make mrproper          make clean + remove the output ISO"
+	@echo "  make install-depends		Install all dependencies"
+	@echo "  make install-arm-depends	Install all dependencies for arm"
+	@echo "  make image             	Build the ISO image"
+	@echo "  make qemu              	Boot ISO image in qemu for testing (optional)"
+	@echo "  make usb               	Write ISO to USB device"
+	@echo "  make FAT               	Add a FAT partition ot the USB stick (optiona)"
+	@echo "  make clean             	Clean up temp files and folders"
+	@echo "  make mrproper          	make clean + remove the output ISO"
 	@echo
 	@echo "For details consult the readme.md file"
 	@echo
 
 
 install-depends:
-	# install all dependencies
+	# installing all x86 dependencies
+	sudo apt-get install bsdtar syslinux syslinux-utils cpio genisoimage \
+	coreutils qemu-system qemu-system-x86 util-linux
+
+install-arm-depends:
+	# installing all arm dependencies
 	sudo apt install -y bsdtar cpio genisoimage coreutils qemu-system qemu-system-x86 util-linux
+	sudo mkdir -p /usr/local/bin
+	sudo mv isohybrid.pl /usr/local/bin/
+	sudo chmod +x /usr/local/bin/isohybrid.pl
+	sudo ln -sn /usr/local/bin/isohybrid.pl /usr/local/bin/isohybrid
 
 image: clean unpack isolinux preseed md5 iso
 
