@@ -63,7 +63,7 @@ https://www.debian.org/distrib/netinst
 Edit the makefile and set some variables to match your situation. e.g.
 
     SOURCE = firmware-10.3.0-amd64-netinst.iso
-    TARGET = firmware-10.3.0-amd64-netinst.iso
+    TARGET = firmware-10.3.0-amd64-headless-netinst.iso
     ARCH = amd
     QEMU = qemu-system-x86_64 
     LABEL = debian-10.3.0-amd64-headless
